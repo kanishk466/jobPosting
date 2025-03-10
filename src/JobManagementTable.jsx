@@ -16,7 +16,7 @@ const JobManagementTable = () => {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs");
+      const res = await axios.get("https://job-backend-spwb.onrender.com/api/jobs");
       setJobs(res.data.data);
       setLoading(false);
     } catch (error) {
@@ -29,7 +29,7 @@ const JobManagementTable = () => {
     if (!selectedJob) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/jobs/${selectedJob._id}`);
+      await axios.delete(`https://job-backend-spwb.onrender.com/api/jobs/${selectedJob._id}`);
       setJobs(jobs.filter((job) => job._id !== selectedJob._id));
       setMessage({ type: "success", text: "Job deleted successfully!" });
       setShowDeleteModal(false);
@@ -43,7 +43,7 @@ const JobManagementTable = () => {
     if (!selectedJob) return;
 
     try {
-      await axios.put(`http://localhost:5000/api/jobs/${selectedJob._id}`, selectedJob);
+      await axios.put(`https://job-backend-spwb.onrender.com/api/jobs/${selectedJob._id}`, selectedJob);
       setJobs(jobs.map((job) => (job._id === selectedJob._id ? selectedJob : job)));
       setMessage({ type: "success", text: "Job updated successfully!" });
       setShowEditModal(false);

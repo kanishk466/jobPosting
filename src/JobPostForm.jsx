@@ -245,7 +245,7 @@ const JobPostForm = () => {
     setMessage({ type: '', text: '' });
 
     try {
-      await axios.post('http://localhost:5000/api/jobs', formData);
+      await axios.post('https://job-backend-spwb.onrender.com/api/jobs', formData);
       setMessage({ type: 'success', text: 'Job has been posted successfully!' });
 
       // Reset form

@@ -16,7 +16,7 @@ const UserJobListing = () => {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs");
+      const res = await axios.get("https://job-backend-spwb.onrender.com/api/jobs");
       setJobs(res.data.data);
       setLoading(false);
     } catch (error) {
@@ -30,7 +30,7 @@ const UserJobListing = () => {
     if (!selectedJob) return;
 
     try {
-      await axios.post(`http://localhost:5000/api/jobs/${selectedJob._id}/apply`, userData);
+      await axios.post(`https://job-backend-spwb.onrender.com/api/jobs/${selectedJob._id}/apply`, userData);
       setMessage({ type: "success", text: "Application submitted successfully!" });
       setShowApplyModal(false);
       setUserData({ name: "", email: "", resume: "" });

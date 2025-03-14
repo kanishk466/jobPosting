@@ -92,7 +92,7 @@ export default function AuthForm({ setIsAuthenticated }) {
     e.preventDefault();
     setMessage(null);
   
-    const endpoint = isLogin ? "http://localhost:5000/api/auth/login" : "http://localhost:5000/api/auth/register";
+    const endpoint = isLogin ? "https://job-backend-spwb.onrender.com/api/auth/login" : "https://job-backend-spwb.onrender.com/api/auth/register";
     
     console.log("Sending Data:", formData); // Debugging
     

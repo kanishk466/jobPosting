@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route ,Navigate } from "react-router-dom";
 import JobManagementTable from "./JobManagementTable";
 import UserJobListing from "./UserJobListing";
 import AuthForm from "./AuthForm";
+import ReviewManager from "./ReviewManager";
 
 
 const App = () => {
@@ -37,7 +38,7 @@ const App = () => {
         <>
           <Route path="/jobPost" element={<JobPostForm />} />
           <Route path="/jobs" element={<JobManagementTable />} />
-          <Route path="/jobListing" element={<UserJobListing />} />
+          <Route path="/jobListing" element={<ReviewManager />} />
         </>
       ) : (
         // Redirect to login if user tries to access private routes
